@@ -1,7 +1,20 @@
 terraform {
   backend "local" {
-    path = "network.tfstate"
+    path = "./network.tfstate"
   }
 }
-/*bucket   = "terraform-state-files-2029"*/
-/*prefix = "terraform/state/gcp-vm.tfstate"*/
+
+/*#GCS Backend
+terraform {
+  backend "gcs"{
+    bucket   = "terraform-state-files-2029"
+    prefix = "terraform/state/gcp-vm.tfstate"
+  }
+}*/
+
+/*#Local Backend
+terraform {
+  backend "gcs" {
+    path = "network.tfstate"
+  }
+}*/
